@@ -169,10 +169,11 @@ Se sua disciplina não especificou, sugiro adicionar uma licença (ex.: MIT/Apac
 ---
 
 > ## 👨‍💻 Integrantes
->
+
 > Enzo Luiz Goulart - RM99666
 > Gustavo Henrique Santos Bonfim - RM98864
 > Kayky Paschoal Ribeiro - RM99929
 > Lucas Yuji Farias Umada - RM99757
 > Natan Eguchi dos Santos - RM98720
+
 > **Sugestões/PRs** são bem-vindos!

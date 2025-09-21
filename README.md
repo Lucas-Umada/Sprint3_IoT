@@ -1,10 +1,10 @@
 # Sprint 3 — IoT: Reconhecimento Facial com dlib/OpenCV
 
-> Repositório analisado: `Lucas-Umada/Sprint3_IoT` (contém `teste.py` e três modelos `.dat` do dlib).
+> Repositório analisado: `Lucas-Umada/Sprint3_IoT` (contém `face_scan.py` e três modelos `.dat` do dlib).
 
 ## 📌 Visão geral
 
-Este projeto demonstra um pipeline básico de **detecção, alinhamento e reconhecimento facial** em Python usando **dlib** e **OpenCV**. O repositório inclui os pesos pré‑treinados do dlib (shape predictors e modelo de embeddings) e um script principal (`teste.py`) para rodar o sistema localmente.
+Este projeto demonstra um pipeline básico de **detecção, alinhamento e reconhecimento facial** em Python usando **dlib** e **OpenCV**. O repositório inclui os pesos pré‑treinados do dlib (shape predictors e modelo de embeddings) e um script principal (`face_scan.py`) para rodar o sistema localmente.
 
 ### O que este projeto faz
 
@@ -13,20 +13,20 @@ Este projeto demonstra um pipeline básico de **detecção, alinhamento e reconh
 - Extrai **vetores 128D** (embeddings) com o modelo ResNet do dlib.
 - (Opcional) Compara embeddings com um banco local para **identificação**.
 
-> Observação: como apenas o arquivo `teste.py` está disponível no repositório público e seu conteúdo pode evoluir, este README descreve a arquitetura e o uso **baseados na estrutura atual do repo** e nos modelos inclusos. Ajuste os comandos conforme sua versão do script.
+> Observação: como apenas o arquivo `face_scan.py` está disponível no repositório público e seu conteúdo pode evoluir, este README descreve a arquitetura e o uso **baseados na estrutura atual do repo** e nos modelos inclusos. Ajuste os comandos conforme sua versão do script.
 
 ## 🗂️ Estrutura do projeto
 
 ```
 Sprint3_IoT/
 ├─ .gitignore
-├─ teste.py
+├─ face_scan.py
 ├─ dlib_face_recognition_resnet_model_v1.dat
 ├─ shape_predictor_5_face_landmarks.dat
 └─ shape_predictor_68_face_landmarks.dat
 ```
 
-- **`teste.py`** — script principal do reconhecimento facial.
+- **`face_scan.py`** — script principal do reconhecimento facial.
 - **`shape_predictor_5_face_landmarks.dat`** — landmarks (olhos e nariz), ideal para **alinhamento rápido**.
 - **`shape_predictor_68_face_landmarks.dat`** — landmarks completos, útil para **análise facial detalhada**.
 - **`dlib_face_recognition_resnet_model_v1.dat`** — **modelo ResNet** que gera vetores 128D para reconhecimento.
@@ -50,7 +50,7 @@ source .venv/bin/activate
 
 pip install --upgrade pip wheel setuptools
 pip install opencv-python dlib numpy imutils
-# Se seu teste.py utilizar:
+# Se seu face_scan.py utilizar:
 pip install face-recognition
 ```
 
@@ -70,15 +70,15 @@ pip install face-recognition
 2. **Ative** seu ambiente virtual e instale as dependências (ver seção anterior).
 3. **Execute o script**:
    ```bash
-   python teste.py
+   python face_scan.py
    ```
    - Se o script aceitar parâmetros (por ex.: `--camera 0`, `--image path.jpg`, `--db faces/`), ajuste aqui:
    ```bash
-   # Exemplos (adapte ao seu teste.py)
-   python teste.py --camera 0
-   python teste.py --image ./amostras/foto1.jpg
-   python teste.py --video ./amostras/video.mp4
-   python teste.py --db ./faces_cadastradas
+   # Exemplos (adapte ao seu face_scan.py)
+   python face_scan.py --camera 0
+   python face_scan.py --image ./amostras/foto1.jpg
+   python face_scan.py --video ./amostras/video.mp4
+   python face_scan.py --db ./faces_cadastradas
    ```
 
 ## 🧠 Como funciona (visão técnica resumida)
@@ -111,7 +111,7 @@ Seu script pode:
 - Salvar em `embeddings.npy` + `labels.json`.
 - No runtime, comparar o embedding capturado com o banco salvo.
 
-> Se `teste.py` ainda não fizer isso, há espaço para evolução (ver **Roadmap**).
+> Se `face_scan.py` ainda não fizer isso, há espaço para evolução (ver **Roadmap**).
 
 ## 🖼️ Espaços para imagens no README
 
@@ -167,6 +167,10 @@ Este projeto envolve **dados biométricos** (faces). Siga estes princípios:
 Se sua disciplina não especificou, sugiro adicionar uma licença (ex.: MIT/Apache-2.0). **Atenção**: os **pesos `.dat`** podem ter **licenças próprias** distintas da licença do seu código — documente isso neste README.
 
 ---
+
+## 🖼️ Video Explicativo
+
+- https://youtu.be/htnoDL44Emo
 
 > ## 👨‍💻 Integrantes
 
